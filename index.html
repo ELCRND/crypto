@@ -5,35 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>crypto</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div class="container">
         <div class="left-content">
-            <div class="notification">
-                <h3>Your Jaxx Liberty is not backed up!</h3>
-                <span>Without recording your backup phrase your assets could be lost forever.</span>
-                <button>Back Up Now</button>
-                <button>X</button>
+
+            <div class="notification block-content">
+                <h3 class="notification__title">Your Jaxx Liberty is not backed up!</h3>
+                <span class="notification__desc">Without recording your backup phrase your assets could be lost
+                    forever.</span>
+                <button class="notification__backUp">Back Up Now</button>
+                <button class="notification__close">X</button>
             </div>
-            <div class="exchange">
-                <h2>
+
+            <div class="exchange block-content">
+                <h2 class="exchange__title">
                     <a href="#">Exchange</a>
                 </h2>
+
                 <div class="exchange__currencies currencies">
                     <div class="currencies__i-have">
                         <span>I Have</span>
-                        <select name="" id=""></select>
+                        <div class="dropdown">
+                            <button class="dropdown__button" data-value="">Сhoose</button>
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item" data-value="bitcoin">
+                                    <img src="images/bitcoin-logo.svg" alt="bitcoin">
+                                    <span>BTC</span>
+                                </li>
+                                <li class="dropdown__item" data-value="ethereum">
+                                    <img src="images/ethereum-logo.svg" alt="ethereum">
+                                    <span>ETH</span>
+                                </li>
+                                <li class="dropdown__item" data-value="bitcoin-cash">
+                                    <img src="images/bitcoin-cash-logo.svg" alt="bitcoin-cash">
+                                    <span>ETH</span>
+                                </li>
+                                <li class="dropdown__item" data-value="litecoin">
+                                    <img src="images/litecoin-logo.svg" alt="litecoin">
+                                    <span>ETH</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+
                     <div class="currencies__i-want">
-                        <span>I Have</span>
-                        <select name="" id=""></select>
+                        <span>I Want</span>
+                        <div class="dropdown">
+                            <button class="dropdown__button" data-value="">Сhoose</button>
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item" data-value="bitcoin">
+                                    <img src="images/bitcoin-logo.svg" alt="bitcoin">
+                                    <span>BTC</span>
+                                </li>
+                                <li class="dropdown__item" data-value="ethereum">
+                                    <img src="images/ethereum-logo.svg" alt="ethereum">
+                                    <span>ETH</span>
+                                </li>
+                                <li class="dropdown__item" data-value="bitcoin-cash">
+                                    <img src="images/bitcoin-cash-logo.svg" alt="bitcoin-cash">
+                                    <span>ETH</span>
+                                </li>
+                                <li class="dropdown__item" data-value="litecoin">
+                                    <img src="images/litecoin-logo.svg" alt="litecoin">
+                                    <span>ETH</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <button>Next</button>
+
+                    <button class="currencies__btn">Next</button>
                 </div>
             </div>
-            <div class="wallets">
-                <h2>
+            <div class="wallets block-content">
+                <h2 class="wallets__title">
                     <a href="#">Wallets</a>
                 </h2>
                 <div class="wallets__container">
@@ -61,8 +108,8 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="markets">
-                <h2>
+            <div class="markets block-content">
+                <h2 class="markets__title">
                     <a href="#">Markets</a>
                 </h2>
                 <table>
@@ -91,8 +138,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="explorer">
-                <h2><a href="#">Block Explorer</a></h2>
+            <div class="explorer block-content">
+                <h2 class="explorer__title"><a href="#">Block Explorer</a></h2>
                 <div class="explorer__container">
                     <form action="">
                         <select name="" id=""></select>
@@ -103,18 +150,18 @@
                     </form>
                 </div>
             </div>
-            <div class="portfolio">
-                <h2><a href="#">Portfolio</a></h2>
+            <div class="portfolio block-content">
+                <h2 class="portfolio__title"><a href="#">Portfolio</a></h2>
                 <div class="portfolio__content">
                     <span>Total Portfolio value:</span>
                 </div>
             </div>
-            <div class="news">
-                <h2><a href="#">News</a></h2>
-                <div class="news__content">
+            <div class="news block-content">
+                <h2 class="news__title"><a href="#">News</a></h2>
+                <div class="news__article article">
                     <img src="" alt="">
-                    <h3 class="news__title">Tesla Completes Blockchain Pilot to Speed up China Imports Process</h3>
-                    <p class="news__desc">
+                    <h3 class="article__title">Tesla Completes Blockchain Pilot to Speed up China Imports Process</h3>
+                    <p class="article__desc">
                         The electric car manufacturer...
                     </p>
                 </div>
@@ -167,6 +214,7 @@
             </ul>
         </div>
     </div>
+    <script src="dropdown.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300..600&display=swap");
+
+body {
+  min-width: 375px;
+  background-color: $main-bg;
+  font-size: 18px;
+  line-height: 150%;
+  color: $main-text;
+  @media screen and (max-width: 1440px) {
+    font-size: 14px;
+  }
+}
+
+.container {
+  width: min(100%, 1696px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: 16px;
+  @media screen and (max-width: 1440px) {
+    width: min(100%, 1380px);
+  }
+  @media screen and (max-width: 1024px) {
+    width: min(100%, 960px);
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.block-content {
+  border: $regular-border;
+  border-radius: 8px;
+  background-color: $block-bg;
+}
+
+::selection {
+  text-shadow: 0 0 1px red;
+  background-color: #353b26;
+}

@@ -1,0 +1,51 @@
+//padding
+$p-block: 10px 16px;
+
+//gap
+$gap-small: 8px;
+
+//radius
+$r-small: 6px;
+
+//fonts
+
+// colors
+$main-text: rgb(255, 255, 255);
+$btn-orange: rgb(238, 113, 46);
+$btn-orange--hover: rgba(238, 113, 46, 0.8);
+$btn-orange--active: rgba(238, 113, 46, 1);
+
+//background-colors
+$main-bg: rgb(10, 28, 68);
+$block-bg: rgb(38, 61, 105);
+$element-bg: rgb(19, 43, 87);
+
+//borders
+
+$regular-border: 1px solid #7e9bbd;
+
+//extends
+
+%block-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 200%;
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -12px;
+    border-bottom: 2px solid rgba(100, 100, 100, 0.6);
+    border-right: 2px solid rgba(100, 100, 100, 0.6);
+    rotate: -45deg;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}

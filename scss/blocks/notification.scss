@@ -1,0 +1,34 @@
+.notification {
+  padding: $p-block;
+  position: relative;
+
+  .notification__title {
+    font-size: 20px;
+  }
+  .notification__desc {
+    width: 60%;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .notification__backUp {
+    padding: $p-block;
+    position: relative;
+    bottom: 20px;
+    border-radius: $r-small;
+    background-color: $btn-orange;
+    font-weight: 700;
+    transition: background-color 50ms ease-in-out;
+    &:hover {
+      background-color: $btn-orange--hover;
+    }
+    &:active {
+      background-color: $btn-orange--active;
+    }
+  }
+  .notification__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}

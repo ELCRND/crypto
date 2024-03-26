@@ -1,0 +1,126 @@
+.exchange {
+  padding: $p-block;
+  .exchange__title {
+    @extend %block-title;
+  }
+  .exchange__currencies {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gap-small;
+    .currencies__i-have,
+    .currencies__i-want {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: $r-small;
+      background-color: #334d80;
+    }
+
+    .currencies__btn {
+      margin-top: $gap-small;
+      padding: $p-block;
+      border-radius: $r-small;
+      background-color: $btn-orange;
+      position: relative;
+      left: 50%;
+      transition: background-color 50ms ease-in-out;
+      &:hover {
+        background-color: $btn-orange--hover;
+      }
+      &:active {
+        background-color: $btn-orange--active;
+      }
+    }
+  }
+}
+
+.dropdown {
+  width: 100%;
+  border-radius: $r-small;
+  background-color: $element-bg;
+  position: relative;
+
+  .dropdown__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background-color: $element-bg;
+    border-radius: $r-small;
+    height: 46px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    padding-right: 35px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 4px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-width: 6px 6px 0 6px;
+      border-color: #fff transparent transparent transparent;
+      border-style: solid;
+      pointer-events: none;
+    }
+  }
+
+  .dropdown__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 52px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+    overflow: hidden;
+    border-radius: $r-small;
+    width: 100%;
+    z-index: 1;
+
+    .dropdown__item {
+      margin: 0;
+      padding: 0;
+      border: $regular-border;
+      border-bottom: 0px;
+      padding: 10px 20px;
+      background-color: $block-bg;
+      cursor: pointer;
+      transition: background-color 250ms ease-in-out;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      &:hover {
+        background: $main-bg;
+      }
+    }
+  }
+  .dropdown__list--visible {
+    display: block;
+  }
+  .dropdown__input-hidden {
+    display: none;
+  }
+  .dropdown__button:focus,
+  .dropdown__button--active {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px rgba(176, 198, 225, 0.6);
+  }
+}

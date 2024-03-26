@@ -1,0 +1,359 @@
+/* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300..600&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+ul,
+ol,
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+a:focus,
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+.exchange .exchange__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 200%;
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+}
+.exchange .exchange__title::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: -12px;
+  border-bottom: 2px solid rgba(100, 100, 100, 0.6);
+  border-right: 2px solid rgba(100, 100, 100, 0.6);
+  rotate: -45deg;
+}
+.exchange .exchange__title:hover {
+  text-decoration: underline;
+}
+
+body {
+  min-width: 375px;
+  background-color: rgb(10, 28, 68);
+  font-size: 18px;
+  line-height: 150%;
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1440px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.container {
+  width: min(100%, 1696px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: 16px;
+}
+@media screen and (max-width: 1440px) {
+  .container {
+    width: min(100%, 1380px);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: min(100%, 960px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.block-content {
+  border: 1px solid #7e9bbd;
+  border-radius: 8px;
+  background-color: rgb(38, 61, 105);
+}
+
+::selection {
+  text-shadow: 0 0 1px red;
+  background-color: #353b26;
+}
+
+.left-content {
+  display: grid;
+  gap: 16px;
+}
+
+.notification {
+  padding: 10px 16px;
+  position: relative;
+}
+.notification .notification__title {
+  font-size: 20px;
+}
+.notification .notification__desc {
+  width: 60%;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 18px;
+}
+.notification .notification__backUp {
+  padding: 10px 16px;
+  position: relative;
+  bottom: 20px;
+  border-radius: 6px;
+  background-color: rgb(238, 113, 46);
+  font-weight: 700;
+  transition: background-color 50ms ease-in-out;
+}
+.notification .notification__backUp:hover {
+  background-color: rgba(238, 113, 46, 0.8);
+}
+.notification .notification__backUp:active {
+  background-color: rgb(238, 113, 46);
+}
+.notification .notification__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.exchange {
+  padding: 10px 16px;
+}
+.exchange .exchange__currencies {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.exchange .exchange__currencies .currencies__i-have,
+.exchange .exchange__currencies .currencies__i-want {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #334d80;
+}
+.exchange .exchange__currencies .currencies__btn {
+  margin-top: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: rgb(238, 113, 46);
+  position: relative;
+  left: 50%;
+  transition: background-color 50ms ease-in-out;
+}
+.exchange .exchange__currencies .currencies__btn:hover {
+  background-color: rgba(238, 113, 46, 0.8);
+}
+.exchange .exchange__currencies .currencies__btn:active {
+  background-color: rgb(238, 113, 46);
+}
+
+.dropdown {
+  width: 100%;
+  border-radius: 6px;
+  background-color: rgb(19, 43, 87);
+  position: relative;
+}
+.dropdown .dropdown__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background-color: rgb(19, 43, 87);
+  border-radius: 6px;
+  height: 46px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 35px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.dropdown .dropdown__button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+}
+.dropdown .dropdown__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-width: 6px 6px 0 6px;
+  border-color: #fff transparent transparent transparent;
+  border-style: solid;
+  pointer-events: none;
+}
+.dropdown .dropdown__list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+  overflow: hidden;
+  border-radius: 6px;
+  width: 100%;
+  z-index: 1;
+}
+.dropdown .dropdown__list .dropdown__item {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #7e9bbd;
+  border-bottom: 0px;
+  padding: 10px 20px;
+  background-color: rgb(38, 61, 105);
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+.dropdown .dropdown__list .dropdown__item img {
+  width: 30px;
+  height: 30px;
+}
+.dropdown .dropdown__list .dropdown__item:hover {
+  background: rgb(10, 28, 68);
+}
+.dropdown .dropdown__list--visible {
+  display: block;
+}
+.dropdown .dropdown__input-hidden {
+  display: none;
+}
+.dropdown .dropdown__button:focus,
+.dropdown .dropdown__button--active {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px rgba(176, 198, 225, 0.6);
+}
+
+/*# sourceMappingURL=styles.css.map */

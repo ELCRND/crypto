@@ -1,0 +1,16 @@
+.portfolio {
+  padding: 16px;
+  .portfolio__title {
+    @extend %block-title;
+  }
+  .portfolio__content {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $r-small;
+    background-color: $element-bg;
+    font-size: 28px;
+    font-weight: 500;
+  }
+}

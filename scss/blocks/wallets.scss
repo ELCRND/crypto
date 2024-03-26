@@ -1,0 +1,48 @@
+.wallets {
+  padding: $p-block;
+  .wallets__title {
+    @extend %block-title;
+  }
+
+  .wallets__container {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $gap-small;
+  }
+}
+
+.wallet {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $r-small;
+  background-color: $element-bg;
+  color: #808080;
+
+  .wallet__title {
+    display: flex;
+    gap: $gap-small;
+    color: attr(data-color);
+    .wallet__img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .wallet__crypto {
+    color: $main-text;
+  }
+}
+.bitcoin {
+  border: 1px solid #f7931a;
+  .wallet__name {
+    color: #f7931a;
+  }
+}
+.bitcoin-cash {
+  border: 1px solid #85b35f;
+  .wallet__name {
+    color: #85b35f;
+  }
+}

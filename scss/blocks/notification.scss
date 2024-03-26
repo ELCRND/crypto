@@ -3,13 +3,16 @@
   position: relative;
 
   .notification__title {
+    margin-bottom: 24px;
     font-size: 20px;
+    font-weight: 600;
   }
   .notification__desc {
     width: 60%;
     display: inline-block;
     font-size: 16px;
     line-height: 18px;
+    font-weight: 500;
   }
   .notification__backUp {
     padding: $p-block;

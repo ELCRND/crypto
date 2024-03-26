@@ -15,6 +15,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 
 	// Клик по кнопке. Открыть/Закрыть select
 	dropDownBtn.addEventListener('click', function (e) {
+		e.stopPropagation()
 		dropDownList.classList.toggle('dropdown__list--visible');
         this.classList.add('dropdown__button--active');
 	});

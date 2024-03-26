@@ -1,5 +1,5 @@
 /* Reset and base styles  */
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300..600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -121,7 +121,7 @@ legend {
   display: block;
 }
 
-.exchange .exchange__title {
+.news .news__title, .portfolio .portfolio__title, .explorer .explorer__title, .markets .markets__title, .wallets .wallets__title, .exchange .exchange__title {
   font-size: 24px;
   font-weight: 500;
   line-height: 200%;
@@ -129,25 +129,26 @@ legend {
   position: relative;
   cursor: pointer;
 }
-.exchange .exchange__title::after {
+.news .news__title::after, .portfolio .portfolio__title::after, .explorer .explorer__title::after, .markets .markets__title::after, .wallets .wallets__title::after, .exchange .exchange__title::after {
   content: "";
   width: 12px;
   height: 12px;
   display: block;
   position: absolute;
   top: 20px;
-  right: -12px;
+  right: -16px;
   border-bottom: 2px solid rgba(100, 100, 100, 0.6);
   border-right: 2px solid rgba(100, 100, 100, 0.6);
   rotate: -45deg;
 }
-.exchange .exchange__title:hover {
+.news .news__title:hover, .portfolio .portfolio__title:hover, .explorer .explorer__title:hover, .markets .markets__title:hover, .wallets .wallets__title:hover, .exchange .exchange__title:hover {
   text-decoration: underline;
 }
 
 body {
   min-width: 375px;
   background-color: rgb(10, 28, 68);
+  font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   line-height: 150%;
   color: rgb(255, 255, 255);
@@ -163,10 +164,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 24px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  grid-template-columns: 1fr 3fr;
   gap: 16px;
 }
 @media screen and (max-width: 1440px) {
@@ -193,8 +194,8 @@ body {
 }
 
 ::selection {
-  text-shadow: 0 0 1px red;
-  background-color: #353b26;
+  text-shadow: 1px 1px 1px black;
+  background-color: hsl(212, 68%, 60%);
 }
 
 .left-content {
@@ -207,13 +208,16 @@ body {
   position: relative;
 }
 .notification .notification__title {
+  margin-bottom: 24px;
   font-size: 20px;
+  font-weight: 600;
 }
 .notification .notification__desc {
   width: 60%;
   display: inline-block;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
 }
 .notification .notification__backUp {
   padding: 10px 16px;
@@ -254,8 +258,13 @@ body {
   border-radius: 6px;
   background-color: #334d80;
 }
+.exchange .exchange__currencies .currencies__i-have span,
+.exchange .exchange__currencies .currencies__i-want span {
+  font-size: 24px;
+  font-weight: 500;
+}
 .exchange .exchange__currencies .currencies__btn {
-  margin-top: 8px;
+  margin-top: 20px;
   padding: 10px 16px;
   border-radius: 6px;
   background-color: rgb(238, 113, 46);
@@ -269,14 +278,13 @@ body {
 .exchange .exchange__currencies .currencies__btn:active {
   background-color: rgb(238, 113, 46);
 }
-
-.dropdown {
+.exchange .dropdown {
   width: 100%;
   border-radius: 6px;
   background-color: rgb(19, 43, 87);
   position: relative;
 }
-.dropdown .dropdown__button {
+.exchange .dropdown .dropdown__button {
   position: relative;
   display: flex;
   align-items: center;
@@ -294,12 +302,12 @@ body {
   line-height: 20px;
   cursor: pointer;
 }
-.dropdown .dropdown__button img {
+.exchange .dropdown .dropdown__button img {
   width: 30px;
   height: 30px;
   margin-right: 4px;
 }
-.dropdown .dropdown__button::after {
+.exchange .dropdown .dropdown__button::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -312,7 +320,7 @@ body {
   border-style: solid;
   pointer-events: none;
 }
-.dropdown .dropdown__list {
+.exchange .dropdown .dropdown__list {
   display: none;
   position: absolute;
   left: 0;
@@ -327,7 +335,7 @@ body {
   width: 100%;
   z-index: 1;
 }
-.dropdown .dropdown__list .dropdown__item {
+.exchange .dropdown .dropdown__list .dropdown__item {
   margin: 0;
   padding: 0;
   border: 1px solid #7e9bbd;
@@ -337,23 +345,350 @@ body {
   cursor: pointer;
   transition: background-color 250ms ease-in-out;
 }
-.dropdown .dropdown__list .dropdown__item img {
+.exchange .dropdown .dropdown__list .dropdown__item img {
   width: 30px;
   height: 30px;
 }
-.dropdown .dropdown__list .dropdown__item:hover {
+.exchange .dropdown .dropdown__list .dropdown__item:hover {
   background: rgb(10, 28, 68);
 }
-.dropdown .dropdown__list--visible {
+.exchange .dropdown .dropdown__list--visible {
   display: block;
 }
-.dropdown .dropdown__input-hidden {
+.exchange .dropdown .dropdown__input-hidden {
   display: none;
 }
-.dropdown .dropdown__button:focus,
-.dropdown .dropdown__button--active {
+.exchange .dropdown .dropdown__button:focus,
+.exchange .dropdown .dropdown__button--active {
   outline: none;
   box-shadow: 0px 0px 0px 1px rgba(176, 198, 225, 0.6);
+}
+
+.wallets {
+  padding: 10px 16px;
+}
+.wallets .wallets__container {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.wallet {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  background-color: rgb(19, 43, 87);
+  color: #808080;
+}
+.wallet .wallet__title {
+  display: flex;
+  gap: 8px;
+  color: attr(data-color);
+}
+.wallet .wallet__title .wallet__img {
+  width: 30px;
+  height: 30px;
+}
+.wallet .wallet__crypto {
+  color: rgb(255, 255, 255);
+}
+
+.bitcoin {
+  border: 1px solid #f7931a;
+}
+.bitcoin .wallet__name {
+  color: #f7931a;
+}
+
+.bitcoin-cash {
+  border: 1px solid #85b35f;
+}
+.bitcoin-cash .wallet__name {
+  color: #85b35f;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.markets {
+  grid-column: 1/3;
+  padding: 10px 16px;
+  position: relative;
+}
+.markets .markets__refresh {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  transition: all 150ms ease-in-out;
+}
+.markets .markets__refresh:hover {
+  filter: brightness(1.2);
+}
+.markets .table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: end;
+}
+@media screen and (max-width: 1200px) {
+  .markets .table {
+    display: inline-block;
+    overflow-x: scroll;
+  }
+}
+.markets .table td {
+  padding: 16px;
+  border-top: 1px solid #7e9bbd;
+  border-bottom: 1px solid #7e9bbd;
+}
+.markets .table td:first-of-type .markets__name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.markets .table td:first-of-type .markets__name b {
+  display: block;
+  text-align: start;
+  font-size: 20px;
+  line-height: 18px;
+}
+@media screen and (max-width: 1200px) {
+  .markets .table td:first-of-type .markets__name b {
+    font-size: 14px;
+  }
+}
+.markets .table td:first-of-type .markets__name::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  border-bottom: 2px solid rgba(100, 100, 100, 0.6);
+  border-right: 2px solid rgba(100, 100, 100, 0.6);
+  rotate: -45deg;
+}
+@media screen and (max-width: 1200px) {
+  .markets .table td:first-of-type .markets__name::after {
+    display: none;
+  }
+}
+.markets .table td:first-of-type .markets__name:hover::after {
+  border-color: rgb(238, 113, 46);
+}
+.markets .table td:nth-child(2) {
+  border-left: 1px solid #7e9bbd;
+}
+.markets .table th {
+  padding: 20px;
+}
+.markets .table th:first-of-type {
+  text-align: start;
+}
+.markets .table th:nth-child(2) {
+  border-left: 1px solid #7e9bbd;
+}
+
+.explorer {
+  padding: 10px 16px;
+  grid-column: 1/3;
+}
+.explorer .explorer__form-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.explorer .explorer__form-search .form-search__searcher {
+  width: 100%;
+  height: 46px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.explorer .explorer__form-search .form-search__searcher [type=search] {
+  width: 100%;
+}
+.explorer .explorer__form-search .form-search__searcher [type=search]::placeholder {
+  color: #ccc;
+}
+.explorer .explorer__form-search .form-search__btn {
+  transition: all 150ms ease-in-out;
+}
+.explorer .explorer__form-search .form-search__btn:hover {
+  filter: brightness(1.2);
+}
+.explorer .dropdown {
+  display: inline-block;
+  border-radius: 6px;
+  position: relative;
+}
+.explorer .dropdown .dropdown__button {
+  width: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+  height: 46px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.explorer .dropdown .dropdown__button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  z-index: 0;
+}
+.explorer .dropdown .dropdown__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-width: 6px 6px 0 6px;
+  border-color: #fff transparent transparent transparent;
+  border-style: solid;
+  pointer-events: none;
+}
+.explorer .dropdown .dropdown__list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+  overflow: hidden;
+  border-radius: 6px;
+  z-index: 1;
+}
+.explorer .dropdown .dropdown__list .dropdown__item {
+  width: 100px;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #7e9bbd;
+  border-bottom: 0px;
+  padding: 10px;
+  background-color: rgb(38, 61, 105);
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+.explorer .dropdown .dropdown__list .dropdown__item img {
+  width: 30px;
+  height: 30px;
+}
+.explorer .dropdown .dropdown__list .dropdown__item:hover {
+  background: rgb(10, 28, 68);
+}
+.explorer .dropdown .dropdown__list--visible {
+  display: block;
+}
+.explorer .dropdown .dropdown__input-hidden {
+  display: none;
+}
+.explorer .dropdown .dropdown__button:focus,
+.explorer .dropdown .dropdown__button--active {
+  outline: none;
+}
+
+.portfolio {
+  padding: 16px;
+}
+.portfolio .portfolio__content {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: rgb(19, 43, 87);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.news {
+  padding: 16px;
+}
+.news .news__article {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+}
+.news .news__article .article__photo {
+  grid-row: 1/3;
+  width: 150px;
+  height: 150px;
+}
+.news .news__article .article__title {
+  text-wrap: balance;
+  font-size: 20px;
+  color: rgb(182, 102, 4);
+}
+
+.menu {
+  width: 100%;
+  overflow: hidden;
+  padding: 14px;
+  grid-column: 1/3;
+  background-color: rgb(38, 61, 105);
+  border-top: 1px solid #7e9bbd;
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  bottom: -1000px;
+}
+.menu:has(:checked) {
+  bottom: 0;
+}
+.menu .menu__list {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.menu .menu__list .menu__item {
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.menu .menu__list .menu__item span {
+  display: block;
+}
+.menu .menu__list .menu__item img {
+  width: 40px;
+  height: 40px;
+}
+.menu .menu__list .menu__item:hover {
+  filter: brightness(1.3);
+  color: rgb(167, 110, 4);
+}
+.menu .menu__isVisible {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.menu .menu__isVisible img {
+  width: 50px;
+  height: 50px;
+}
+.menu .menu__isVisible input {
+  display: none;
+}
+.menu .menu__isVisible input:checked + img {
+  rotate: 180deg;
 }
 
 /*# sourceMappingURL=styles.css.map */

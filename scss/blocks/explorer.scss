@@ -2,6 +2,9 @@
   padding: $p-block;
   grid-column: 1 / 3;
 
+  @media screen and (max-width: 900px) {
+    grid-column: 1 / 2;
+  }
   .explorer__title {
     @extend %block-title;
   }

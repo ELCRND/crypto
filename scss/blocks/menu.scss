@@ -17,6 +17,9 @@
     display: flex;
     justify-content: center;
     gap: 100px;
+    @media screen and (max-width: 1000px) {
+      gap: 20px;
+    }
     .menu__item {
       text-align: center;
       transition: all 0.3s ease-in-out;

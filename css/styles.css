@@ -175,9 +175,10 @@ body {
     width: min(100%, 1380px);
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .container {
-    width: min(100%, 960px);
+    width: min(100%, 860px);
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 768px) {
@@ -412,14 +413,24 @@ body {
 
 .main-content {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+@media screen and (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .markets {
   grid-column: 1/3;
   padding: 10px 16px;
   position: relative;
+}
+@media screen and (max-width: 900px) {
+  .markets {
+    grid-column: 1/2;
+  }
 }
 .markets .markets__refresh {
   position: absolute;
@@ -499,6 +510,11 @@ body {
 .explorer {
   padding: 10px 16px;
   grid-column: 1/3;
+}
+@media screen and (max-width: 900px) {
+  .explorer {
+    grid-column: 1/2;
+  }
 }
 .explorer .explorer__form-search {
   display: flex;
@@ -659,6 +675,11 @@ body {
   display: flex;
   justify-content: center;
   gap: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .menu .menu__list {
+    gap: 20px;
+  }
 }
 .menu .menu__list .menu__item {
   text-align: center;

@@ -263,6 +263,7 @@ body {
 }
 .exchange .exchange__currencies .currencies__i-have span,
 .exchange .exchange__currencies .currencies__i-want span {
+  margin-bottom: 10px;
   font-size: 24px;
   font-weight: 500;
 }

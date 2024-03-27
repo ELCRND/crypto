@@ -274,6 +274,8 @@ body {
   background-color: rgb(238, 113, 46);
   position: relative;
   left: 50%;
+  font-size: 20px;
+  font-weight: 500;
   transition: background-color 50ms ease-in-out;
 }
 .exchange .exchange__currencies .currencies__btn:hover {
